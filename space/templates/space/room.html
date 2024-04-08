@@ -1,0 +1,42 @@
+{% extends "space/base.html" %}
+
+
+{% load static %}
+
+
+
+{% block content %}
+<div id="room-main" class="w-full flex flex-col justify-center items-center">    
+    <section class="">
+        <h1> Room Lowa </h1>
+    </section>
+    
+    <div id="video-streams" class=" flex flex-wrap w-3/4 h-4/5 p-2 border border-gray-200 rounded-md">
+        
+
+    
+        <div id="controls-wrapper" class="absolute bottom-3 left-1/2">
+            <div  class="">
+                <img id="min-btn" class="control-icon" src="{ static 'images/mic.png'}"/>
+
+            </div>
+
+            <div  class="">
+                <img id="video-btn" class="control-icon" src="{ static 'images/cam.png'}"/>
+
+            </div>
+            <div  class="">
+                <img id="leave-btn" class="control-icon" src="{ static 'images/leave.png'}"/>
+
+            </div>
+        </div>
+
+
+        
+    </div>   
+</div>
+
+
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.20.2.js' %}"> </script>    
+<script type="text/javascript" src="{% static 'js/main.js' %}"> </script>    
+{% endblock %}
