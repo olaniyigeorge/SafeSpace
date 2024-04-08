@@ -1,0 +1,26 @@
+
+
+
+.video-player{
+    height: 100%;
+    width:100%;
+
+}
+
+.video-player > *{
+    border-radius: 5px;
+
+}
+
+
+.username-wrapper{
+    position: absolute;
+    top: 10px;
+    left:10px;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+}
