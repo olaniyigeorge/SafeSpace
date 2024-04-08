@@ -1,0 +1,54 @@
+{% extends "space/base.html" %}
+
+
+{% load static %}
+
+
+
+{% block content %}
+<div id="room-main" class="w-full flex flex-col justify-center items-center">    
+    <section class="w-full flex p-10 justify-center items-center">
+        <h1  class="p-2"> Welcome to: <span id="space-name" class=""> </span></h1>
+    </section>
+    
+    <div 
+        id="video-streams" 
+        class="flex flex-wrap w-3/4 h-full  border border-green-500 rounded-md">
+    </div>  
+        
+    <div id="controls-wrapper" class="px-2 fixed bottom-20 rounded-md flex space-x-5 ">
+        <div  
+            id="mic-btn" 
+            class="p-3 cursor-pointer drop-shadow bg-white border rounded-md flex justify-center items-center">
+                <img 
+                id="mic-btn" 
+                    class=" drop-shadow w-5 h-5 rounded" 
+                    src="{% static 'images/mic.svg' %}"/>
+        </div>
+
+        <div 
+            id="cam-btn"     
+            class="p-3 cursor-pointer drop-shadow bg-white border rounded-md">
+                <img 
+                    id="cam-btn"    
+                    class="  w-5 h-5 rounded flex justify-center items-center" 
+                    src="{% static 'images/cam.svg' %}"/>
+        </div>
+        <div  
+            id="leave-btn" 
+            class="p-3 cursor-pointer drop-shadow bg-red-500 border rounded-md">
+                <img 
+                    id="leave-btn" 
+                    class=" w-5 h-5  flex justify-center items-center" 
+                    src="{% static 'images/leave.svg' %}"/>
+        </div>
+    </div>
+
+    
+
+</div>
+
+
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.20.2.js' %}"> </script>    
+<script type="text/javascript" src="{% static 'js/main.js' %}"> </script>    
+{% endblock %}
