@@ -2,7 +2,7 @@ const APP_ID = "8b05e337ec8a40a69d31bea9982ad7a0"
 const CHANNEL = sessionStorage.getItem('space')
 const TOKEN = sessionStorage.getItem('token')
 let UID = Number(sessionStorage.getItem('UID'))
-const name = sessionStorage.getItem('name')
+const NAME = sessionStorage.getItem('name')
 const client = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'})
 
 
@@ -30,10 +30,9 @@ let joinAndDisplayLocalStream = async () => {
 
     let member = await createMember()
 
-
-    let player = `<div id="user-container-${UID}" class=" relative w-full flex-1 max-h-full min-h-[400px] h-[400px] flex-grow justify-center items-center  border rounded-md ">
-                    <div class="absolute top-2 left-2 z-40 p-2 rounded-md bg-purple-600 bg-opacity-30 text-2xl border font-bold text-white "> <span class=""> ${NAME} </span></div> 
-                    <div id="user-${UID}" class="w-full rounded-md border max-h-full  h-[400px]"> </div>
+    let player = `<div id="user-container-${UID}" class="relative w-full flex-1 max-h-full__min-h-[400px] h-[400px] flex-grow justify-center items-center  border rounded-md ">
+                    <div class="absolute top-2 left-2 z-40 p-2 rounded-md bg-purple-600 bg-opacity-30 text-2xl border font-bold text-white "> <span class=""> ${member.name} </span></div> 
+                    <div id="user-${UID}" class="w-full rounded-md border max-h-full_  h-[400px]"> </div>
                 </div> `
 
     document.getElementById('video-streams').insertAdjacentHTML("beforeend", player)
@@ -57,10 +56,10 @@ let handleUserJoined = async (user, mediaType) => {
             if (player != null) {
                 player.remove()
             }
-            player = `<div id="user-container-${user.uid}" class="w-full flex-basis-[500px] flex-1 max-h-full min-h-[350px] flex-grow justify-center items-center  border border-red-500 h-full p-2 rounded-md ">
-                    <div class=" bg-purple-600 w-full text-white"> <span class="user-name"> ${user.uuid} </span></div> 
-                    <div id="user-${user.uid}" class="w-full border min-h-[350px] h-[300px]"> </div>
-                </div> `
+            player =  `<div id="user-container-${UID}" class=" relative w-full flex-1 max-h-full_min-h-[400px] h-[400px] flex-grow justify-center items-center  border rounded-md ">
+                        <div class="absolute top-2 left-2 z-40 p-2 rounded-md bg-purple-600 bg-opacity-30 text-2xl border font-bold text-white "> <span class=""> ${member.name} </span></div> 
+                        <div id="user-${UID}" class="w-full rounded-md border max-h-full_  h-[400px]"> </div>
+                    </div> `
 
             document.getElementById('video-streams').insertAdjacentHTML("beforeend", player)
 
